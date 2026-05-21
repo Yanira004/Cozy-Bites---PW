@@ -9,10 +9,14 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $pdo->exec("CREATE TABLE IF NOT EXISTS utilizatori (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT NOT NULL UNIQUE,
-        parola TEXT NOT NULL,
-        rol TEXT DEFAULT 'user'
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    parola TEXT NOT NULL,
+    rol TEXT DEFAULT 'user',
+    varsta INTEGER,
+    tara TEXT,
+    oras TEXT,
+    bio TEXT
     )");
 
     $pdo->exec("CREATE TABLE IF NOT EXISTS retete (
@@ -23,6 +27,23 @@ try {
         timp_preparare INTEGER NOT NULL,
         FOREIGN KEY (id_utilizator) REFERENCES utilizatori(id) ON DELETE CASCADE
     )");
+
+    $pdo->exec("CREATE TABLE IF NOT EXISTS retete_imagini (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_reteta INTEGER NOT NULL,
+    cale_fisier TEXT NOT NULL,
+    FOREIGN KEY (id_reteta) REFERENCES retete(id) ON DELETE CASCADE
+    )");
+
+     $pdo->exec("CREATE TABLE IF NOT EXISTS log_profil (
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     id_utilizator INTEGER,
+     actiune TEXT,
+     data_ora TEXT
+    )");
+
+    //$pdo->exec("INSERT INTO utilizatori (username, parola, rol) VALUES
+    //('admin1', '" . password_hash('parola123', PASSWORD_DEFAULT) . "', 'admin')");
 
     // Inserăm utilizatorii de test
     $check = $pdo->query("SELECT COUNT(*) FROM utilizatori")->fetchColumn();

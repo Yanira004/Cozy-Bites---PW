@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 require_once 'config.php';
 $mesajEroare = "";
 
@@ -12,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mesajEroare = "Captcha incorect! Cât fac " . $_SESSION['nr1'] . " + " . $_SESSION['nr2'] . "?";
     } else {
         // 2. Verificare utilizator în SQLite
-        $stmt = $pdo->prepare("SELECT * FROM utilizatori WHERE username = :user AND parola = :pass");
-        $stmt->execute(['user' => $usernameIntrodus, 'pass' => $parolaIntrodusa]);
-        $utilizatorGasit = $stmt->fetch(PDO::FETCH_ASSOC); // FETCH_ASSOC e sfânt în SQLite
+        $stmt = $pdo->prepare("SELECT * FROM utilizatori WHERE username = :user");
+        $stmt->execute(['user' => $usernameIntrodus]);
+        $utilizatorGasit = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($utilizatorGasit) {
+        if ($utilizatorGasit && password_verify($parolaIntrodusa, $utilizatorGasit['parola'])) {
             $_SESSION['logat'] = true;
             $_SESSION['id_utilizator'] = $utilizatorGasit['id'];
             $_SESSION['username'] = $utilizatorGasit['username'];
@@ -34,10 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Generăm numere proaspete pentru Captcha
-$_SESSION['nr1'] = rand(1, 9);
-$_SESSION['nr2'] = rand(1, 9);
-$_SESSION['captcha_rezultat'] = $_SESSION['nr1'] + $_SESSION['nr2'];
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    $_SESSION['nr1'] = rand(1, 9);
+    $_SESSION['nr2'] = rand(1, 9);
+    $_SESSION['captcha_rezultat'] = $_SESSION['nr1'] + $_SESSION['nr2'];
+}
 ?>
 
 <!DOCTYPE html>

@@ -20,9 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bio = $_POST['bio'];
 
     $sql_update = "UPDATE utilizatori SET varsta = ?, tara = ?, oras = ?, bio = ? WHERE id = ?";
-    $stmt_mysqli = mysqli_prepare($mysqli_conn, $sql_update);
-    mysqli_stmt_bind_param($stmt_mysqli, "isssi", $varsta, $tara, $oras, $bio, $id_user);
-    mysqli_stmt_execute($stmt_mysqli);
+    $stmt_update = $pdo->prepare($sql_update);
+    $stmt_update->execute([$varsta, $tara, $oras, $bio, $id_user]);
 
     $stmt_log = $sqlite_conn->prepare("INSERT INTO log_profil (id_utilizator, actiune, data_ora) VALUES (?, ?, ?)");
     $stmt_log->execute([$id_user, 'Actualizare profil', date('Y-m-d H:i:s')]);
