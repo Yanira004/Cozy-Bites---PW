@@ -1,0 +1,658 @@
+
+:root {
+    --culoare-fundal: #fdf3de;
+    --culoare-text: #333333;
+    --culoare-meniu: #4b3119;
+    --culoare-hover: #614822;
+}
+
+body {
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.home-page {
+    text-align: center;
+}
+
+.form-page {
+    text-align: left;
+    background-color: #4b3119;
+}
+
+.form-title {
+    text-align: center;
+    color: var(--culoare-fundal);
+}
+
+
+
+/*stiluri pt navbar*/
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--culoare-meniu);
+    padding: 10px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* position: sticky; */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.logo-nav {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: var(--culoare-fundal);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.nav-center {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-center li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-center li a:hover {
+    background-color: var(--culoare-hover);
+    color: var(--culoare-fundal);
+    transform: translateY(-2px);
+}
+
+
+.nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-right a {
+    color: white;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-right a:hover {
+    background-color: var(--culoare-hover);
+    color: var(--culoare-fundal);
+    transform: scale(1.1);
+}
+
+
+
+/*stiluri pt navbar in formular*/
+
+.form-page .navbar {
+    background-color: var(--culoare-fundal);
+}
+
+
+.form-page .logo-text {
+    color: var(--culoare-meniu);
+}
+
+.form-page .nav-center li a {
+    color: var(--culoare-meniu);
+}
+
+.form-page .nav-center li a:hover {
+    background-color: var(--culoare-hover);
+    color: white;
+}
+
+.form-page .nav-right a {
+    color: var(--culoare-meniu);
+    background-color: rgba(75, 49, 25, 0.1);
+}
+
+.form-page .nav-right a:hover {
+    background-color: var(--culoare-hover);
+    color: white;
+}
+
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: fadeSlide 1s ease-out;
+}
+
+form {
+    background-color: #fdf3de;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.logo-main {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.logo-nav {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+/*banner*/
+.header-section {
+    background-color: transparent;
+    color: var(--culoare-meniu);
+    margin: 40px auto;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+.header-section b,
+.header-section strong {
+    color: #8a572a;
+    font-weight: normal;
+}
+
+
+h2 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: var(--culoare-meniu);
+}
+
+
+.carousel-container {
+    margin: 40px auto 60px auto;
+}
+
+#tabel-classic {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--culoare-meniu);
+    outline: none;
+    box-shadow: 0 0 5px var(--culoare-meniu);
+}
+
+input[type="submit"] {
+    background-color: var(--culoare-meniu);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--culoare-hover);
+}
+
+.container-carduri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    color: var(--culoare-text);
+    margin-bottom: 10px;
+}
+
+.card-btn {
+    margin-top: auto;
+    background-color: var(--culoare-meniu);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card-btn:hover {
+    background-color: var(--culoare-hover);
+}
+
+table {
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* validare js */
+.eroare-input {
+    border: 2px solid red !important;
+    box-shadow: 0 0 5px red !important;
+}
+
+.mesaj-eroare {
+    color: red;
+    font-size: 13px;
+    display: none;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.eroare-input+.mesaj-eroare {
+    display: block;
+}
+
+
+/* dependente*/
+.eroare-input {
+    border: 2px solid red !important;
+    box-shadow: 0 0 5px red !important;
+}
+
+.mesaj-eroare {
+    color: red;
+    font-size: 13px;
+    display: none;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.eroare-input+.mesaj-eroare {
+    display: block;
+}
+
+
+/* carusel */
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    height: 350px;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+}
+
+.carousel-content {
+    background: rgba(75, 49, 25, 0.8);
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.carousel-content h3 {
+    margin: 0 0 10px 0;
+}
+
+.carousel-content a {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: var(--culoare-meniu);
+}
+
+.prev {
+    left: 10px;
+}
+
+
+.next {
+    right: 10px;
+}
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel-btn:hover {
+    background-color: var(--culoare-meniu);
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+
+
+
+th.sortabil {
+    cursor: pointer;
+    background-color: var(--culoare-meniu);
+    color: white;
+    position: relative;
+    padding-right: 25px;
+}
+
+th.sortabil:hover {
+    background-color: var(--culoare-hover);
+}
+
+
+th.sort-asc::after {
+    content: " ▲";
+    font-size: 12px;
+}
+
+th.sort-desc::after {
+    content: " ▼";
+    font-size: 12px;
+}
+
+.tabel-activ {
+    background-color: #f5e6cc;
+}
+
+
+.lista-colapsabila,
+.lista-colapsabila ul {
+    list-style-type: none;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+
+.expandabil {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0 5px 20px;
+    font-weight: bold;
+    color: var(--culoare-meniu);
+    user-select: none;
+}
+
+
+
+.expandabil::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+
+.expandabil.deschis::before {
+    transform: rotate(90deg);
+}
+
+
+.expandabil>ul {
+    display: none;
+    font-weight: normal;
+    color: var(--culoare-text);
+}
+
+
+.expandabil.deschis>ul {
+    display: block;
+}
+
+
+.element-simplu {
+    padding: 5px 0;
+    cursor: default;
+}
+
+.element-simplu:hover {
+    color: var(--culoare-hover);
+}
+
+
+
+/* scrollbar*/
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--culoare-fundal);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--culoare-meniu);
+    border-radius: 10px;
+    border: 3px solid var(--culoare-fundal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--culoare-hover);
+}
+
+
+
+/* --- ELEMENTE DECORATIVE MARGINI --- */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.decor-pan,
+.decor-rollingPin, 
+.decor-choco,
+.decor-cookie,
+.decor-waffle,
+.decor-tel {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.6;
+    max-width: 150px;
+}
+
+
+.decor-pan {
+    top: 150px;
+    left: 30px;
+    transform: rotate(-15deg);
+}
+
+
+.decor-rollingPin {
+    top: 400px;
+    right: 50px;
+    transform: rotate(-100deg);
+}
+
+.decor-choco {
+    top: 100px;
+    right: 150px;
+    transform: rotate(10deg);
+}
+
+.decor-cookie {
+    top: 450px;
+    left: 150px;
+    transform: rotate(-15deg);
+    max-width: 100px;
+}
+
+.decor-waffle {
+    top: 650px;
+    right: 150px;
+    transform: rotate(10deg);
+}
+
+.decor-tel {
+    top: 700px;
+    left: 10px;
+    transform: rotate(-10deg);
+    max-width: 120px;
+}
+
+
+.mini-cookie {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

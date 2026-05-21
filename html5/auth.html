@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Bites - Login</title>
+    <link rel="stylesheet" href="css/orizontal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="form-page">
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../images/LogoCircle.png" class="logo-nav" alt="Logo">
+            <span class="logo-text">Cozy Bites</span>
+        </div>
+    
+        <ul class="nav-center">
+            <li><a href="home5.html">Acasă</a></li>
+            <li><a href="formular5.php">Adaugă Rețetă</a></li>
+            <li><a href="carduri.php">Carduri Rețete</a></li>
+        </ul>
+    
+        <div class="nav-right">
+            <a href="contact.html" title="Contact"><i class="fas fa-phone"></i></a>
+            <a href="login.html" title="Contul Meu"><i class="fas fa-user"></i></a>
+        </div>
+    </nav>
+
+    <h1 class = "form-title" style="font-family: 'Pacifico', cursive;">Creare Cont Nou</h1>
+    <form id="loginForm" action="home5.html" method="POST">
+        <fieldset>
+            <legend>Date Autentificare</legend>
+            <p>
+                Nume utilizator:
+                <input type="text" id="username" name="username">
+                <span class="mesaj-eroare">Username-ul nu poate fi gol.</span>
+            </p>
+            <p>
+                Parolă:
+                <input type="password" id="parola" name="parola">
+                <span class="mesaj-eroare">Parola trebuie să aibă minim 6 caractere!</span>
+            </p>
+            <p>
+                Data nașterii:
+                <input type="date" id="data_nastere" name="data_nastere">
+                <span class="mesaj-eroare">Data este invalidă sau ești minor!</span>
+            </p>
+            <p><input type="submit" value="Înregistrare"></p>
+        </fieldset>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jQuery/validareJQ.js"></script>
+</body>
+
+</html>

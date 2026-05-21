@@ -1,0 +1,75 @@
+:root {
+    --culoare-fundal: #fdf3de;
+    --culoare-text: #333333;
+    --culoare-meniu: #4b3119;
+    --culoare-hover: #614822;
+}
+
+body {
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul.meniu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--culoare-meniu);
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+ul.meniu li {
+    margin: 5px 0;
+    text-align: center;
+}
+
+ul.meniu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+}
+
+ul.meniu li a:hover {
+    background-color: var(--culoare-hover);
+}
+
+.wrapper-tabel {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    ul.meniu {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    ul.meniu {
+        justify-content: center;
+    }
+
+    ul.meniu li {
+        margin: 0 20px;
+    }
+}
+

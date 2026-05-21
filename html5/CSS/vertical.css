@@ -1,0 +1,49 @@
+:root {
+    --culoare-fundal: #fdf3de;
+    --culoare-text: #333333;
+    --culoare-meniu: #4b3119;
+    --culoare-hover: #614822;
+}
+
+body {
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul.meniu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--culoare-meniu);
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0;
+    width: 200px;
+    height: 100vh;
+}
+
+ul.meniu li {
+    margin: 10px 0;
+}
+
+ul.meniu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+ul.meniu li a:hover {
+    background-color: var(--culoare-hover);
+    padding-left: 25px;
+}
+
+.continut {
+    padding: 20px;
+    flex: 1;
+}

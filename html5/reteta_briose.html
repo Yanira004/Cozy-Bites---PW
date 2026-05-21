@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <title >Cozy Bites - Brioșe cu lămâie și vanilie</title>
+    <link rel="icon" type="image/png" href="../images/LogoCircle.png">
+    <link rel="stylesheet" href="css/orizontal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        .calculator-portii {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .calculator-portii button {
+            background-color: var(--culoare-meniu);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .calculator-portii button:hover {
+            background-color: var(--culoare-hover);
+        }
+
+        .calculator-portii input {
+            width: 60px;
+            text-align: center;
+            font-size: 20px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .sectiune-ingrediente {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .sectiune-ingrediente h4 {
+            color: var(--culoare-meniu);
+            border-bottom: 1px solid #eee;
+        }
+
+        .lista-calculata {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-calculata li {
+            padding: 5px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .lista-calculata span {
+            font-weight: bold;
+            color: var(--culoare-meniu);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../images/LogoCircle.png" class="logo-nav" alt="Logo">
+            <span class="logo-text">Cozy Bites</span>
+        </div>
+    
+        <ul class="nav-center">
+            <li><a href="home5.html">Acasă</a></li>
+            <li><a href="formular5.php">Adaugă Rețetă</a></li>
+            <li><a href="carduri.php">Carduri Rețete</a></li>
+        </ul>
+    
+        <div class="nav-right">
+            <a href="contact.html" title="Contact"><i class="fas fa-phone"></i></a>
+            <a href="login.html" title="Contul Meu"><i class="fas fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div style="padding: 20px; max-width: 800px; margin: auto;">
+        <h1 style="text-align: center; font-family: 'Pacifico', cursive; color: #4b3119;">Brioșe cu lămâie și vanilie</h1>
+        <img src="../images/briose_lamaie.jpeg" alt="Brioșe" width="100%"
+            style="border-radius: 15px; max-height: 400px; object-fit: cover;">
+
+        <div class="calculator-portii">
+            <h3>Câte brioșe vrei să faci?</h3>
+            <div>
+                <button id="btn-minus">-</button>
+                <input type="number" id="input-portii" value="24" min="12" max="36">
+                <button id="btn-plus">+</button>
+            </div>
+            <p>Cantități pentru <b id="afisaj-portii">24</b> brioșe:</p>
+
+            <div class="sectiune-ingrediente">
+                <h4>Ingrediente Aluat</h4>
+                <ul class="lista-calculata">
+                    <li data-baza="400"><span>400</span> g făină</li>
+                    <li data-baza="160"><span>160</span> ml lapte</li>
+                    <li data-baza="5"><span>5</span> ouă</li>
+                    <li data-baza="160"><span>160</span> ml ulei</li>
+                    <li data-baza="330"><span>330</span> g zahăr</li>
+                    <li>esență de vanilie</li>
+                    <li>1 plic praf de copt</li>
+                    <li>coaja de la o lămâie</li>
+                </ul>
+
+                <h4>Ingrediente Cremă</h4>
+                <ul class="lista-calculata">
+                    <li data-baza="200"><span>200</span> ml frișcă lichidă</li>
+                    <li data-baza="2"><span>2</span> cutii mascarpone</li>
+                    <li>zahăr pudră după gust</li>
+                    <li>esență de vanilie</li>
+                    <li>fructe de pădure pentru decor</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Mod de preparare</h3>
+        <ol>
+            <li>Amestecăm toate ingredientele pentru aluatul de brioșe.</li>
+            <li>Turnăm compoziția în formele de brioșe, presărăm puțin zahăr deasupra.</li>
+            <li>Punem la cuptorul preîncălzit la <strong>210 grade Celsius</strong> pentru 8 minute, apoi le mai lăsăm
+                10 minute la <strong>170 grade C</strong>.</li>
+            <li>Între timp mixăm frișca lichidă până se întărește, adăugăm mascarponele, vanilia și zahărul și continuăm
+                să mixăm până obținem o cremă puțin fermă.</li>
+            <li>Punem crema de mascarpone într-un poș și ornăm brioșele.</li>
+            <li>Decorăm brioșele cu fructe de pădure.</li>
+        </ol>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jQuery/claculatorJQ.js"></script>
+</body>
+
+</html>

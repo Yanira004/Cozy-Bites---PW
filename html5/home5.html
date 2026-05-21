@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Bites - Pagina Principală</title>
+    <link rel="icon" type="image/png" href="../images/LogoCircle.png">
+    <link rel="stylesheet" href="css/orizontal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="home-page">
+
+    <img src="../images/pan.png" class="decor-pan" alt="decor" aria-hidden="true">
+    <img src="../images/tel_rm.png" class="decor-cookie" alt="decor" aria-hidden="true">
+    <img src="../images/chohoCup.png" class="decor-choco" alt="decor" aria-hidden="true">
+    <img src="../images/rollingPin.png" class="decor-rollingPin" alt="decor" aria-hidden="true">
+    <img src="../images/waffle_rm.png" class="decor-waffle" alt="decor" aria-hidden="true">
+    <img src="../images/cookie_rm.png" class="decor-tel" alt="decor" aria-hidden="true">
+
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../images/LogoCircle.png" class="logo-nav" alt="Logo">
+            <span class="logo-text">Cozy Bites</span>
+        </div>
+
+        <ul class="nav-center">
+            <li><a href="home5.php">Acasă</a></li>
+            <li><a href="formular5.php">Adaugă Rețetă</a></li>
+            <li><a href="carduri.php">Carduri Rețete</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="contact.html" title="Contact"><i class="fas fa-phone"></i></a>
+
+            <?php if (isset($_SESSION['logat']) && $_SESSION['logat'] === true): ?>
+            <a href="profil.php" title="Profilul Meu"><i class="fas fa-user-circle"></i></a>
+            <?php else: ?>
+            <a href="login.php" title="Autentificare"><i class="fas fa-user"></i></a>
+            <?php endif; ?>
+        </div>
+    </nav>
+
+    <div class="header-section">
+        <p>Bine ai pe platforma noastră! <b>Gătește</b> cu pasiune și <strong>împărtășește</strong> cu ceilalți.</p>
+    </div>
+
+    <div class="carousel-container">
+        <div id="carousel-slide" class="carousel-slide">
+            <div class="carousel-content">
+                <h3 id="carousel-text">Rețetele Săptămânii</h3>
+                <a id="carousel-link" href="#" class="card-btn">Vezi Rețeta</a>
+            </div>
+        </div>
+        <button id="btn-prev" class="carousel-btn prev">&#10094;</button>
+        <button id="btn-next" class="carousel-btn next">&#10095;</button>
+    </div>
+
+
+
+    <h2>Top Rețete și Categorii</h2>
+    <p>Apasă pe capul de tabel pentru a sorta rețetele.</p>
+
+    <div class="wrapper-tabel">
+        <table id="tabel-classic">
+            <thead>
+                <tr>
+                    <th class="sortabil" onclick="sorteazaTabel(0)">Nume Rețetă</th>
+                    <th class="sortabil" onclick="sorteazaTabel(1)">Dificultate</th>
+                    <th class="sortabil" onclick="sorteazaTabel(2)">Timp (min)</th>
+                </tr>
+            </thead>
+            <tbody id="corp-tabel-classic">
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <p>
+        <a href="tabel_vertical.html" class="card-btn" style="text-decoration: none;">Vezi varianta Tabel Vertical</a>
+    </p>
+
+    <br><br>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jQuery/caruselJQ.js"></script>
+    <script src="js/date_tabel.js"></script>
+    <script src="jQuery/tabel_clasicJQ.js"></script>
+</body>
+
+</html>

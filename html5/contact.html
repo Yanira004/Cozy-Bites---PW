@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Bites - Contact</title>
+    <link rel="icon" type="image/png" href="../images/LogoCircle.png">
+    <link rel="stylesheet" href="css/orizontal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .contact-wrapper {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .contact-info {
+            background-color: var(--culoare-fundal);
+            color: var(--culoare-text);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .contact-info i {
+            color: var(--culoare-meniu);
+            margin-right: 10px;
+            font-size: 22px;
+            vertical-align: middle;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body class="form-page">
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="../images/LogoCircle.png" class="logo-nav" alt="Logo">
+            <span class="logo-text">Cozy Bites</span>
+        </div>
+
+        <ul class="nav-center">
+            <li><a href="home5.html">Acasă</a></li>
+            <li><a href="formular5.php">Adaugă Rețetă</a></li>
+            <li><a href="carduri.php">Carduri Rețete</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="contact.html" title="Contact"><i class="fas fa-phone"></i></a>
+            <a href="login.html" title="Contul Meu"><i class="fas fa-user"></i></a>
+        </div>
+    </nav>
+
+    <h1 class="form-title" style="font-family: 'Pacifico', cursive;">Ia legătura cu noi</h1>
+
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <p><i class="fas fa-phone-alt"></i> <strong>Telefon:</strong> +40 712 345 678</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> contact@cozybites.ro</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Adresă:</strong> Str. Bucuriei, Nr. 10, Cluj-Napoca</p>
+        </div>
+
+        <form id="contactForm" action="home5.html" method="POST">
+            <fieldset>
+                <legend>Lasă-ne un mesaj sau un feedback</legend>
+                <p>
+                    Numele tău:
+                    <input type="text" id="nume" name="nume" placeholder="Cum te numești?">
+                    <span class="mesaj-eroare">Numele este obligatoriu!</span>
+                </p>
+                <p>
+                    Adresa de email:
+                    <input type="email" id="email" name="email" placeholder="exemplu@email.com"
+                        style="width: 100%; padding: 10px; margin: 8px 0 15px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                    <span class="mesaj-eroare">Te rugăm să introduci un email valid!</span>
+                </p>
+                <p>
+                    Mesajul tău:
+                    <textarea id="mesaj" name="mesaj"
+                        placeholder="Scrie aici feedback-ul tău, sugestii sau întrebări..."></textarea>
+                    <span class="mesaj-eroare">Mesajul nu poate fi gol!</span>
+                </p>
+                <p>
+                    <input type="checkbox" id="termeni" name="termeni"> Sunt de acord cu prelucrarea datelor pentru a fi
+                    contactat.
+                    <span class="mesaj-eroare" style="display:block; color:red;" id="eroare-termeni"></span>
+                </p>
+                <p><input type="submit" value="Trimite Mesajul"></p>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jQuery/validareJQ.js"></script>
+</body>
+
+</html>
